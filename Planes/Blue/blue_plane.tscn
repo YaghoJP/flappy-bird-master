@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://duwsfsq7txewl"]
+
+[ext_resource type="PackedScene" uid="uid://cbwccf8qdf5qb" path="res://Planes/plane.tscn" id="1_0iu33"]
+[ext_resource type="Texture2D" uid="uid://bvntpsok5a8x5" path="res://Planes/Blue/planeBlue1.png" id="2_k2ar6"]
+[ext_resource type="Texture2D" uid="uid://bokghwlyvels1" path="res://Planes/Blue/planeBlue2.png" id="3_2g30l"]
+[ext_resource type="Texture2D" uid="uid://087voyngu1by" path="res://Planes/Blue/planeBlue3.png" id="4_wsjum"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w650g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k2ar6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k2ar6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2g30l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wsjum")
+}],
+"loop": true,
+"name": &"move",
+"speed": 10.0
+}]
+
+[node name="BluePlane" instance=ExtResource("1_0iu33")]
+
+[node name="Texture" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_w650g")

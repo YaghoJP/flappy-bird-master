@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://drp2k6ooepjfs"]
+
+[ext_resource type="PackedScene" uid="uid://cbwccf8qdf5qb" path="res://Planes/plane.tscn" id="1_thvqw"]
+[ext_resource type="Texture2D" uid="uid://q0cghfj8gn7n" path="res://Planes/Red/planeRed1.png" id="2_e5tm2"]
+[ext_resource type="Texture2D" uid="uid://wcfvmyu4tg8j" path="res://Planes/Red/planeRed2.png" id="3_vepel"]
+[ext_resource type="Texture2D" uid="uid://l1m1yptx56t" path="res://Planes/Red/planeRed3.png" id="4_7drea"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lrv2q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_e5tm2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_e5tm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vepel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7drea")
+}],
+"loop": true,
+"name": &"move",
+"speed": 10.0
+}]
+
+[node name="GreenPlane" instance=ExtResource("1_thvqw")]
+
+[node name="Texture" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_lrv2q")
+animation = &"move"

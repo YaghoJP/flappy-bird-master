@@ -1,0 +1,15 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1tdhge0aci2u"]
+
+[ext_resource type="Script" uid="uid://bdn46a34dllf8" path="res://Managers/plane_manager.gd" id="1_13ctd"]
+[ext_resource type="Resource" uid="uid://ctlrl60kv2a33" path="res://DataSkins/blue.tres" id="2_2en5g"]
+[ext_resource type="Script" uid="uid://dfkr1e3wnll6g" path="res://DataSkins/skins.gd" id="2_5e5jr"]
+[ext_resource type="Resource" uid="uid://bsl0qe5l7thdb" path="res://DataSkins/red.tres" id="3_gibus"]
+[ext_resource type="Resource" uid="uid://dx0lbe4af5w42" path="res://DataSkins/green.tres" id="5_ka3oh"]
+
+[node name="PlaneManager" type="Node"]
+script = ExtResource("1_13ctd")
+_skins = Dictionary[int, ExtResource("2_5e5jr")]({
+0: ExtResource("3_gibus"),
+1: ExtResource("2_2en5g"),
+2: ExtResource("5_ka3oh")
+})

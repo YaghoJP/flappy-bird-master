@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkinsPlane" load_steps=3 format=3 uid="uid://c5yyj6ruqfn1w"]
+
+[ext_resource type="Script" uid="uid://dfkr1e3wnll6g" path="res://DataSkins/skins.gd" id="1_gpkaj"]
+[ext_resource type="PackedScene" uid="uid://k1b3m35xgie7" path="res://Planes/Yellow/yellow_plane.tscn" id="1_wsc08"]
+
+[resource]
+script = ExtResource("1_gpkaj")
+name = "yellow"
+price = 500
+plane = ExtResource("1_wsc08")
+metadata/_custom_type_script = "uid://dfkr1e3wnll6g"

@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5vnj52r706iy"]
+[gd_scene load_steps=8 format=3 uid="uid://c5vnj52r706iy"]
 
 [ext_resource type="Texture2D" uid="uid://duiy5x8u0hr7r" path="res://BackGround/background.png" id="1_a02cp"]
-[ext_resource type="PackedScene" uid="uid://cbwccf8qdf5qb" path="res://Planes/plane.tscn" id="2_go701"]
+[ext_resource type="PackedScene" uid="uid://d1tdhge0aci2u" path="res://Managers/plane_manager.tscn" id="2_go701"]
+[ext_resource type="Script" uid="uid://dfkr1e3wnll6g" path="res://DataSkins/skins.gd" id="3_o06y3"]
+[ext_resource type="Resource" uid="uid://bsl0qe5l7thdb" path="res://DataSkins/red.tres" id="4_k7acu"]
+[ext_resource type="Resource" uid="uid://ctlrl60kv2a33" path="res://DataSkins/blue.tres" id="5_5v1tr"]
+[ext_resource type="Resource" uid="uid://dx0lbe4af5w42" path="res://DataSkins/green.tres" id="6_0fj1v"]
+[ext_resource type="Resource" uid="uid://c5yyj6ruqfn1w" path="res://DataSkins/yellow.tres" id="7_ikia7"]
 
 [node name="World" type="Node2D"]
 
@@ -10,5 +15,11 @@ position = Vector2(800, 374)
 scale = Vector2(2, 2)
 texture = ExtResource("1_a02cp")
 
-[node name="Plane" parent="." instance=ExtResource("2_go701")]
-position = Vector2(192, 309)
+[node name="PlaneManager" parent="." instance=ExtResource("2_go701")]
+_currentIndexSkin = 1
+_skins = Dictionary[int, ExtResource("3_o06y3")]({
+0: ExtResource("4_k7acu"),
+1: ExtResource("5_5v1tr"),
+2: ExtResource("6_0fj1v"),
+3: ExtResource("7_ikia7")
+})

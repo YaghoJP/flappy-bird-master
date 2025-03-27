@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://k1b3m35xgie7"]
+
+[ext_resource type="PackedScene" uid="uid://cbwccf8qdf5qb" path="res://Planes/plane.tscn" id="1_7a7ew"]
+[ext_resource type="Texture2D" uid="uid://cgtdfpa61o4i7" path="res://Planes/Yellow/planeYellow1.png" id="2_fxoum"]
+[ext_resource type="Texture2D" uid="uid://cbnja2ianreex" path="res://Planes/Yellow/planeYellow2.png" id="3_8qov3"]
+[ext_resource type="Texture2D" uid="uid://c7ml0cof4y8ad" path="res://Planes/Yellow/planeYellow3.png" id="4_7sje7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_llp4e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fxoum")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fxoum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8qov3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7sje7")
+}],
+"loop": true,
+"name": &"move",
+"speed": 10.0
+}]
+
+[node name="YellowPlane" instance=ExtResource("1_7a7ew")]
+
+[node name="Texture" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_llp4e")
+animation = &"move"

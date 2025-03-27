@@ -4,11 +4,10 @@ class_name Player
 @export_category('Variables')
 @export var _gravity: float = 1000.0
 @export var _jumpForce: float = -400.0
-@export var _maxSpeed: float =     400.0
+@export var _maxSpeed: float = 400.0
 @export var _rotationSpeed: float = 2
 
 func _physics_process(_delta: float) -> void:
-	
 	#Executando o pulo
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = _jumpForce

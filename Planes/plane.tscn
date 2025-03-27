@@ -1,104 +1,29 @@
-[gd_scene load_steps=13 format=3 uid="uid://cbwccf8qdf5qb"]
+[gd_scene load_steps=4 format=3 uid="uid://cbwccf8qdf5qb"]
 
-[ext_resource type="Texture2D" uid="uid://bvntpsok5a8x5" path="res://Planes/planeBlue1.png" id="1_6qllm"]
 [ext_resource type="Script" uid="uid://kbmxwrhxly3g" path="res://Planes/plane.gd" id="1_tu3q3"]
-[ext_resource type="Texture2D" uid="uid://q0cghfj8gn7n" path="res://Planes/planeRed1.png" id="2_t5qcd"]
-[ext_resource type="Texture2D" uid="uid://dup4ijlr30qgx" path="res://Planes/planeGreen1.png" id="3_omcbi"]
-[ext_resource type="Texture2D" uid="uid://cgtdfpa61o4i7" path="res://Planes/planeYellow1.png" id="4_tu3q3"]
-[ext_resource type="Texture2D" uid="uid://bokghwlyvels1" path="res://Planes/planeBlue2.png" id="4_xemae"]
-[ext_resource type="Texture2D" uid="uid://087voyngu1by" path="res://Planes/planeBlue3.png" id="5_tu3q3"]
-[ext_resource type="Texture2D" uid="uid://wcfvmyu4tg8j" path="res://Planes/planeRed2.png" id="6_gba75"]
-[ext_resource type="Texture2D" uid="uid://l1m1yptx56t" path="res://Planes/planeRed3.png" id="7_1l6wi"]
-[ext_resource type="Texture2D" uid="uid://cbnja2ianreex" path="res://Planes/planeYellow2.png" id="9_gba75"]
-[ext_resource type="Texture2D" uid="uid://c7ml0cof4y8ad" path="res://Planes/planeYellow3.png" id="10_1l6wi"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_sgvfd"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_vtltu"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_6qllm")
-}],
+"frames": [],
 "loop": true,
-"name": &"idle_blue",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_t5qcd")
-}],
-"loop": true,
-"name": &"idle_default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_omcbi")
-}],
-"loop": true,
-"name": &"idle_green",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_tu3q3")
-}],
-"loop": true,
-"name": &"idle_yellow",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_6qllm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_xemae")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_tu3q3")
-}],
-"loop": true,
-"name": &"move_blue",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_t5qcd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_gba75")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_1l6wi")
-}],
-"loop": true,
-"name": &"move_default",
+"name": &"idle",
 "speed": 10.0
 }, {
 "frames": [],
 "loop": true,
-"name": &"move_green",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_tu3q3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_gba75")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_1l6wi")
-}],
-"loop": true,
-"name": &"move_yellow",
+"name": &"move",
 "speed": 10.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tu3q3"]
+radius = 37.2156
 
 [node name="Plane" type="CharacterBody2D"]
 script = ExtResource("1_tu3q3")
 
-[node name="Collision" type="CollisionShape2D" parent="."]
-
 [node name="Texture" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_sgvfd")
-animation = &"move_blue"
+sprite_frames = SubResource("SpriteFrames_vtltu")
+animation = &"idle"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tu3q3")
