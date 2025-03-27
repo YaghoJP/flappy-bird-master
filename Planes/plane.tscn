@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://cbwccf8qdf5qb"]
+[gd_scene load_steps=13 format=3 uid="uid://cbwccf8qdf5qb"]
 
 [ext_resource type="Texture2D" uid="uid://bvntpsok5a8x5" path="res://Planes/planeBlue1.png" id="1_6qllm"]
+[ext_resource type="Script" uid="uid://kbmxwrhxly3g" path="res://Planes/plane.gd" id="1_tu3q3"]
 [ext_resource type="Texture2D" uid="uid://q0cghfj8gn7n" path="res://Planes/planeRed1.png" id="2_t5qcd"]
 [ext_resource type="Texture2D" uid="uid://dup4ijlr30qgx" path="res://Planes/planeGreen1.png" id="3_omcbi"]
 [ext_resource type="Texture2D" uid="uid://cgtdfpa61o4i7" path="res://Planes/planeYellow1.png" id="4_tu3q3"]
@@ -94,6 +95,7 @@ animations = [{
 }]
 
 [node name="Plane" type="CharacterBody2D"]
+script = ExtResource("1_tu3q3")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 
