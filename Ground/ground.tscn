@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://k20vs0aytq0o"]
+
+[ext_resource type="Script" uid="uid://dlrjallx6l2mp" path="res://Ground/ground.gd" id="1_q7d2g"]
+[ext_resource type="Texture2D" uid="uid://cvjp578yskg1i" path="res://Ground/groundSnow.png" id="1_sb7i6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7d2g"]
+size = Vector2(808, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86dfh"]
+size = Vector2(808, 50)
+
+[node name="Ground" type="Node2D" node_paths=PackedStringArray("ground_1", "ground_2", "textureGround_1")]
+script = ExtResource("1_q7d2g")
+ground_1 = NodePath("Area2D")
+ground_2 = NodePath("Area2D2")
+textureGround_1 = NodePath("Area2D/Sprite2D")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(404, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("1_sb7i6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_q7d2g")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(1212, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+texture = ExtResource("1_sb7i6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_86dfh")

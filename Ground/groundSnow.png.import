@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvjp578yskg1i"
-path="res://.godot/imported/groundSnow.png-2f00b07e90a1fa2888b48a38c4273bc0.ctex"
+path="res://.godot/imported/groundSnow.png-20eaead3ed9faf9c2aea2d707f78f841.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Obstacle/groundSnow.png"
-dest_files=["res://.godot/imported/groundSnow.png-2f00b07e90a1fa2888b48a38c4273bc0.ctex"]
+source_file="res://Ground/groundSnow.png"
+dest_files=["res://.godot/imported/groundSnow.png-20eaead3ed9faf9c2aea2d707f78f841.ctex"]
 
 [params]
 
