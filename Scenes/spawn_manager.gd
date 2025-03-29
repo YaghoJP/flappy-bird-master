@@ -18,4 +18,18 @@ func getRandomSpawnPosition() -> Vector2:
 func _on_spawn_timer_timeout() -> void:
 	var _obs := OBSTACLE.instantiate()
 	_obs.position = getRandomSpawnPosition()
+	_obs.onPlaneCrashed.connect(_onPlaneCrashed)
+	
 	add_child(_obs)
+
+func _onPlaneCrashed(plane: Player) ->void:
+	plane.isDead = true
+	_stopObstacles()
+	
+func _stopObstacles() -> void:
+	
+	var _children := get_children()
+	_timer.stop()
+	for child in _children:
+		if child is Obstacle:
+			child.canMove = false

@@ -6,10 +6,14 @@ class_name Player
 @export var _jumpForce: float = -400.0
 @export var _maxSpeed: float = 400.0
 @export var _rotationSpeed: float = 2
+@export var isDead: bool = false
 
 func _physics_process(_delta: float) -> void:
+	
 	#Executando o pulo
 	if Input.is_action_just_pressed("jump"):
+		if isDead:
+			return
 		velocity.y = _jumpForce
 		rotation = deg_to_rad(-30)
 		
