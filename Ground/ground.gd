@@ -33,8 +33,6 @@ func _on_body_entered(body: Node2D) -> void:
 		onPlaneCrashed.emit(body)
 		stopMoveGround()
 		body.stopGravity()
-		pass
 
 func stopMoveGround() ->void:
 	speed = 0
-	pass

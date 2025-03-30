@@ -39,4 +39,5 @@ autostart = true
 [node name="Ground" parent="." instance=ExtResource("10_ikia7")]
 position = Vector2(0, 819)
 
+[connection signal="onObstaclesStart" from="PlaneManager" to="SpawnManager" method="_on_plane_manager_on_obstacles_start"]
 [connection signal="timeout" from="SpawnManager/SpawnTimer" to="SpawnManager" method="_on_spawn_timer_timeout"]

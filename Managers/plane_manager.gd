@@ -1,6 +1,8 @@
 extends Node
 class_name PlaneManager
 
+signal onObstaclesStart
+
 @export_category('Variavles')
 @export var _currentIndexSkin: int = 0
 @export var spawnPosition: Vector2 = Vector2(220, 375)
@@ -13,7 +15,10 @@ func _ready():
 	
 func setSkin(_indexSkin: int, _position: Vector2) -> void:
 	var _plane = _skins[_indexSkin].plane.instantiate()
-	
 	add_child(_plane)
 	
 	_plane.position = spawnPosition
+	_plane.onGameStarted.connect(onGamerStarted)
+
+func onGamerStarted() ->void:
+	onObstaclesStart.emit()

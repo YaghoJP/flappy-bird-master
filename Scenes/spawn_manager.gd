@@ -7,6 +7,15 @@ const OBSTACLE = preload("res://Obstacle/obstacle.tscn")
 @export var _timer: Timer
 @export var _spawnPosition: Vector2 = Vector2(660, 450   )
 
+var auxTimer: bool = false
+func _ready() -> void:
+	_stopObstacles()
+
+func startTimer() -> void:
+	if !auxTimer:
+		auxTimer = true
+		_timer.start()
+
 func getRandomSpawnPosition() -> Vector2:
 	var _viewport: Rect2 = get_viewport_rect()
 	var _half = _viewport.size.y / 2
@@ -33,3 +42,7 @@ func _stopObstacles() -> void:
 	for child in _children:
 		if child is Obstacle:
 			child.canMove = false
+
+
+func _on_plane_manager_on_obstacles_start() -> void:
+	startTimer()
